@@ -1,0 +1,11 @@
+To restart gunicorn:    
+Command: sudo systemctl reload
+doc: run this command at /etc/
+
+
+
+To restart nginx:
+Command: sudo nginx start/stop
+doc: run this command at /etc/
+
+
