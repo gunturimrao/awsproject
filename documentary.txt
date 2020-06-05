@@ -1,5 +1,5 @@
-sudo apt install update
-sudo apt install -u upgrade
+sudo apt-get update
+sudo apt-get -u upgrade
 sudo nginx----to start nginx
 gunicorn --bind 0.0.0.0:8000 aws.wsgi:application
 pip3 install psycopg2
