@@ -1,8 +1,96 @@
+sudo apt install update
+sudo apt install -u upgrade
+sudo nginx----to start nginx
+gunicorn --bind 0.0.0.0:8000 aws.wsgi:application
+pip3 install psycopg2
+pip3 install psycopg2-binary
+
+pip3 install gunicorn
+pip3 apt-get install -y nginx
+
+sudo nginx--- to start nginx
+
+
+-------------------------------------------------------------------------
+open /etc/supervisor/conf.d dir and create gunicorn.conf
+Add these line to the file
+[
+[program:gunicorn]
+directory=/home/ubuntu/awsproject(xyz)
+command=/home/ubuntu/env/bin/gunicorn --workers 3 --bind unix:/home/ubuntu/xyz/app.sock awsproj.wsgi:application
+autostart=true
+autorestaty=true
+
+stderr_logfile=/var/log/gunicorn/gunicorn.err.log
+stdout_logfile=/var/log/gunicorn/gunicorn.out.log
+
+[group:guni]
+programs:gunicorn
+
+]
+
+sudo supervisorctl reread
+sudo supervisorctl update
+sudo supervisorctl status
+
+
+
+
+another file:
+
+[
+
+server{
+
+listen 80;
+server_name www.share2remember.com
+
+location / {
+
+include proxy_params;
+proxy_pass http"//unix:/home/ubuntu/awsproject/app.sock
+
+}
+
+
+]
+
+
+
+
+
+create dir to log file
+sudo mkdir /var/log/gunicorn
+
+sudo supervisorctl update
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 To restart gunicorn:    
 Command: sudo systemctl reload
 doc: run this command at /etc/
 
 
+
+sudo nginx -t
+
+sudo service nginx restart
 
 To restart nginx:
 Command: sudo nginx start/stop
