@@ -4,7 +4,9 @@ sudo apt install python3-pip
 sudo pip3 install virtualenv
 virtualenv -p python3 env
 source /env/bin/activate
+pip3 install django
 
+sudo apt install gunicorn
 sudo nginx----to start nginx
 gunicorn --bind 0.0.0.0:8000 aws.wsgi:application
 pip3 install psycopg2
@@ -57,7 +59,7 @@ server_name www.share2remember.com;
 location / {
 
 include proxy_params;
-proxy_pass http://unix:/home/ubuntu/awsproject/app.sock
+proxy_pass http://unix:/home/ubuntu/awsproject/app.sock;
 
 }
 
