@@ -38,7 +38,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'mainapp',
-    'login'
 ]
 
 MIDDLEWARE = [
@@ -87,10 +86,10 @@ WSGI_APPLICATION = 'awsproj.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'postgres',
+        'NAME': 'share2db',
         'USER': 'postgres',
-        'PASSWORD': 'postgres',
-        'HOST': 'localhost',
+        'PASSWORD': 'Kavitha1993',
+        'HOST': 'mydbinstance.cekbn9tcypid.us-east-1.rds.amazonaws.com',
         'PORT': '5432',
     }
 }
